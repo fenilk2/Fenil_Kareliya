@@ -1,0 +1,55 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <radialGradient id="bgGrad" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#111838"/>
+      <stop offset="100%" stop-color="#050611"/>
+    </radialGradient>
+    <linearGradient id="fGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="40%" stop-color="#e2e8f8"/>
+      <stop offset="100%" stop-color="#72e5ff"/>
+    </linearGradient>
+    <linearGradient id="orbitGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#72e5ff"/>
+      <stop offset="50%" stop-color="#52d9ff"/>
+      <stop offset="100%" stop-color="#9b8cff"/>
+    </linearGradient>
+    <filter id="cyanGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Deep space rounded container -->
+  <rect width="64" height="64" rx="16" fill="url(#bgGrad)" stroke="#223061" stroke-width="1.5"/>
+
+  <!-- Orbital horizon guide ring -->
+  <circle cx="32" cy="32" r="26" fill="none" stroke="rgba(155, 140, 255, 0.14)" stroke-width="1" stroke-dasharray="3 3"/>
+
+  <!-- Rear orbital loop (passes behind F stem) -->
+  <g transform="rotate(-26 32 32)">
+    <path d="M 57 32 A 25 9.5 0 0 0 7 32" fill="none" stroke="url(#orbitGrad)" stroke-width="2.5" stroke-dasharray="24 6 36 6"/>
+  </g>
+
+  <!-- Geometric F Monogram -->
+  <!-- Vertical Stem -->
+  <rect x="20" y="15" width="7" height="34" rx="2" fill="url(#fGrad)"/>
+  <!-- Top Horizontal Bar -->
+  <rect x="20" y="15" width="24" height="6.5" rx="2" fill="url(#fGrad)"/>
+  <!-- Middle Horizontal Bar -->
+  <rect x="20" y="29" width="16" height="5.5" rx="2" fill="url(#fGrad)"/>
+
+  <!-- Fore orbital arc (sweeps across in front of F) -->
+  <g transform="rotate(-26 32 32)">
+    <path d="M 7 32 A 25 9.5 0 0 0 57 32" fill="none" stroke="url(#orbitGrad)" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Celestial satellite spark -->
+    <circle cx="56" cy="31.5" r="3" fill="#72e5ff" filter="url(#cyanGlow)"/>
+    <circle cx="56" cy="31.5" r="1.3" fill="#ffffff"/>
+  </g>
+
+  <!-- Stellar Star Glint -->
+  <polygon points="45,13 46.5,15.5 49,16 46.5,16.5 45,19 43.5,16.5 41,16 43.5,15.5" fill="#ffffff"/>
+</svg>

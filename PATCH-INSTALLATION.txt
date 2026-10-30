@@ -1,0 +1,62 @@
+========================================================================
+FENIL KARELIYA PORTFOLIO — MILESTONE 18 RELEASE PATCH INSTRUCTIONS
+Milestone 18: Custom Favicon & Brand Identity Finish
+========================================================================
+
+CONTENTS OF THIS PATCH ARCHIVE:
+------------------------------------------------------------------------
+1. src/app/icon.svg
+   - Custom scalable SVG favicon (geometric F monogram + 3D cosmic orbital ring)
+   - Deep midnight space background (#050611) with glacial cyan and nebula violet accents
+   - Automatically served by Next.js App Router at /icon.svg across all routes
+   - Rendered losslessly across modern browsers and high-DPI displays
+
+2. src/app/favicon.ico
+   - Dual-frame binary ICO container embedding 32x32 and 16x16 PNG icon frames
+   - Automatically served by Next.js App Router at /favicon.ico
+   - Preserves crisp letterform and orbit silhouette on standard browser tab bars
+
+3. src/app/apple-icon.svg
+   - 180x180 high-resolution format for iOS / iPadOS home screens and bookmarks
+
+4. src/app/layout.tsx
+   - Root layout leveraging Next.js App Router native file-based metadata icons,
+     preventing public/ duplicate collisions while automatically injecting
+     <link rel="icon"> tags on all pre-rendered and SSR routes
+
+5. eslint.config.mjs & tsconfig.json
+   - Updated ignores and excludes ensuring isolated milestone backup folders are excluded
+
+6. README.md & PATCH-INSTALLATION.txt
+   - Milestone 18 documentation, brand design details, and verification commands
+
+
+HOW TO APPLY THIS PATCH:
+------------------------------------------------------------------------
+1. Extract the contents of this ZIP archive into your root project directory:
+   e:\project portfolio\fenil\
+
+   Overwrite the files when prompted. Note: ensure public/ does NOT contain
+   duplicate icon files so Next.js App Router can serve them cleanly.
+
+2. Run automated validation checks:
+   npm run typecheck
+   npm run lint
+   npm run build
+
+3. Launch development server or preview static build:
+   npm run dev
+   # Or preview pre-rendered production output:
+   npx serve@latest out
+
+4. Visit:
+   http://localhost:3000/
+   http://localhost:3000/about/
+   http://localhost:3000/skills/
+   http://localhost:3000/journey/
+   http://localhost:3000/projects/
+   http://localhost:3000/contact/
+
+Observe the browser tab bar: the custom F + cosmic orbit favicon is displayed
+crisply beside the page title across all routes.
+========================================================================

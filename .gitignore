@@ -1,0 +1,36 @@
+# Dependencies
+node_modules/
+/.pnp
+.pnp.js
+
+# Next.js build & webpack cache
+.next/
+out/
+build/
+dist/
+*.tsbuildinfo
+next-env.d.ts
+
+# Large archives and local backups
+milestone/
+*.zip
+part*.zip
+.stage-patch/
+.temp_gh_pages/
+
+# Environment files & secrets
+.env
+.env*.local
+*.env
+.env.production
+.env.development
+
+# Logs & debugging
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# System & editor files
+.DS_Store
+Thumbs.db
